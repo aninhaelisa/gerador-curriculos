@@ -8,6 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="shortcut icon" href="assets/cv.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&family=Lato:wght@300;400;700&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -24,7 +25,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-3">
                             <label for="cor_primaria" class="form-label">Cor primária </label>
-                            <input type="color" class="form-control form-control-color" id="cor-primaria" name="cor_primaria" value="#ff86eb" title="Escolha a cor primária">
+                            <input type="color" class="form-control form-control-color" id="cor_primaria" name="cor_primaria" value="#ff86eb" title="Escolha a cor primária">
                         </div>
                         <div class="col-md-6 mb-3">
                             <label for="fonte_titulos" class="form-label">Fonte dos Títulos</label>
@@ -66,7 +67,7 @@
                 <div class="card-body">
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="foto" class="form-label"> Foto (Opicional)</label>
+                            <label for="foto" class="form-label"> Foto (Opcional)</label>
                             <input type="file" class="form-control" id="foto" name="foto" accept="image/*">
                             <small class="form-text text-muted">Formatos: JPG, PNG, GIF. Tamanho máximo: 2MB</small>
                             <div id="preview-container" class="mt-2" style="display: none;">
@@ -100,16 +101,16 @@
                     </div>
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label for="cidade" class="form-control"> Cidade *</label>
+                            <label for="cidade" class="form-label"> Cidade *</label>
                             <input type="text" class="form-control" id="cidade" name="cidade" required>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label for="estado" class="form-control">Estado</label>
+                            <label for="estado" class="form-label">Estado</label>
                             <input type="text" class="form-control" id="estado" name="estado">
                         </div>
                     </div>
                     <div class="mb-3">
-                        <label for="sobre" class="form-control">Sobre Você</label>
+                        <label for="sobre" class="form-label">Sobre Você</label>
                         <textarea name="sobre" rows="3" id="sobre" class="form-control"></textarea>
                     </div>
                 </div>
@@ -161,7 +162,12 @@
 
                 </div>
             </div>
+
+            <div class="text-center mb-4">
+            <button type="submit" class="btn btn-success btn-lg">Gerar Currículo</button>
+        </div>
         </form>
+
     </div>
 
 
