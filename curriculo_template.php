@@ -119,6 +119,10 @@
                     <p><?php echo nl2br(htmlspecialchars($dados['informacoes_adicionais'])); ?></p>
                 </div>
             <?php } ?>
+</div>
+
+
+        
 </body>
 
 </html>
