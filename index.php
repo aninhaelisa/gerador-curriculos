@@ -26,6 +26,18 @@
                                 <label for="cor_primaria" class="form-label">Cor primária </label>
                                 <input type="color" class="form-control form-control-color" id="cor-primaria" name="cor_primaria" value="ff86eb" title="Escolha a cor primária">
                             </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="fonte_titulos" class="form-label">Fonte dos Títulos</label>
+                                <select name="fonte_titulos" id="fonte_titulos" class="form-control">
+                                    <option value="value">Roboto</option>
+                                    <option value="value">Open Sans</option>
+                                    <option value="value">Lato</option>
+                                    <option value="value">Montserrat</option>
+                                    <option value="value">Poppins</option>
+                                    <option value="value">Arial</option>
+                                    <option value="value">Georgia</option>
+                                </select>
+                            </div>
                         </div>
                     </div>
             </div>
