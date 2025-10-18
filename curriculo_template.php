@@ -33,5 +33,63 @@
             </div>
         </div>
     </div>
+
+    <?php if (!empty($dados['sobre'])) { ?>
+<div class="curriculo-section">
+    <h3 class="section-title">Sobre</h3>
+    <p><?php echo nl2br(htmlspecialchars($dados['sobre'])); ?></p>
+</div>
+<?php } ?>
+
+<?php if (!empty($dados['experiencias'])) { ?>
+<div class="curriculo-section">
+    <h3 class="section-title">Experiência Profissional</h3>
+    <?php foreach ($dados['experiencias'] as $index => $experiencia) { ?>
+        <div class="experiencia-item-curriculo">
+            <h5><?php echo htmlspecialchars($experiencia['cargo']); ?></h5>
+            <h6 class="text-primary"><?php echo htmlspecialchars($experiencia['empresa']); ?></h6>
+            <span class="badge bg-primary"><?php echo $experiencia['inicio']; ?> - <?php echo $experiencia['termino'] ?? 'Atual'; ?></span>
+            <p><?php echo nl2br(htmlspecialchars($experiencia['descricao'])); ?></p>
+        </div>
+    <?php } ?>
+</div>
+<?php } ?>
+
+<?php if (!empty($dados['formacoes'])) { ?>
+<div class="curriculo-section">
+    <h3 class="section-title">Formação Acadêmica</h3>
+    <?php foreach ($dados['formacoes'] as $formacao) { ?>
+        <div class="formacao-item-curriculo">
+            <h5><?php echo htmlspecialchars($formacao['curso']); ?></h5>
+            <h6 class="text-primary"><?php echo htmlspecialchars($formacao['instituicao']); ?></h6>
+        </div>
+    <?php } ?>
+</div>
+<?php } ?>
+
+<?php if (!empty($dados['habilidades'])) { ?>
+<div class="curriculo-section">
+    <h3 class="section-title">Habilidades</h3>
+    <?php foreach ($dados['habilidades'] as $habilidade) { ?>
+        <div><?php echo htmlspecialchars($habilidade['nome']); ?> - <?php echo htmlspecialchars($habilidade['nivel']); ?></div>
+    <?php } ?>
+</div>
+<?php } ?>
+
+<?php if (!empty($dados['referencias'])) { ?>
+<div class="curriculo-section">
+    <h3 class="section-title">Referências Pessoais</h3>
+    <?php foreach ($dados['referencias'] as $referencia) { ?>
+        <div><?php echo htmlspecialchars($referencia['nome']); ?> - <?php echo htmlspecialchars($referencia['telefone']); ?></div>
+    <?php } ?>
+</div>
+<?php } ?>
+
+<?php if (!empty($dados['informacoes_adicionais'])) { ?>
+<div class="curriculo-section">
+    <h3 class="section-title">Informações Adicionais</h3>
+    <p><?php echo nl2br(htmlspecialchars($dados['informacoes_adicionais'])); ?></p>
+</div>
+<?php } ?>
 </body>
 </html>
