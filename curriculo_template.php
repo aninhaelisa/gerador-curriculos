@@ -22,17 +22,127 @@
     }
 
     .curriculo-container {
-        max-width: 210mm;
-        margin: 0 auto;
-        padding: 20mm;
-        background: white;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 210mm;
+            margin: 0 auto;
+            background: white;
+            padding: 20mm;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            min-height: 297mm;
+            position: relative;
+        }
 
-    .section-title {
-        color: var(--cor-primaria);
-        font-family: var(--fonte-titulos);
-    }
+        .curriculo-header h1,
+        .section-title {
+            font-family: var(--fonte-titulos);
+            color: var(--cor-primaria);
+        }
+
+        .curriculo-header {
+            border-bottom: 3px solid var(--cor-primaria);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .section-title {
+            border-bottom: 2px solid var(--cor-primaria);
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Estilos para layout classico */
+        <?php if ($dados['estilo_layout'] == 'classico') { ?>
+        .curriculo-container {
+            border: 1px solid #dee2e6;
+        }
+        .section-title {
+            background-color: #f8f9fa;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem 0.375rem 0 0;
+        }
+        <?php } ?>
+
+        /* Estilos para layout criativo */
+        <?php if ($dados['estilo_layout'] == 'criativo') { ?>
+        .curriculo-header {
+            background: linear-gradient(135deg, var(--cor-primaria), #6c757d);
+            color: white;
+            padding: 2rem;
+            border-radius: 0.5rem 0.5rem 0 0;
+            margin-bottom: 2rem;
+        }
+        .curriculo-header h1,
+        .curriculo-header p {
+            color: white;
+        }
+        .section-title {
+            background-color: var(--cor-primaria);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            border: none;
+        }
+        <?php } ?>
+
+        .foto-perfil {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border: 3px solid var(--cor-primaria);
+        }
+
+        .curriculo-section {
+            margin-bottom: 1.5rem;
+            page-break-inside: avoid;
+        }
+
+        .experiencia-item-curriculo, 
+        .formacao-item-curriculo {
+            margin-bottom: 1rem;
+            page-break-inside: avoid;
+        }
+
+        .text-primary {
+            color: var(--cor-primaria) !important;
+        }
+        
+        .bg-primary {
+            background-color: var(--cor-primaria) !important;
+        }
+
+        .badge-custom {
+            font-size: 0.75em;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .curriculo-container {
+                padding: 10mm;
+                margin: 10px;
+            }
+            
+            .curriculo-header .row {
+                text-align: center;
+            }
+            
+            .foto-perfil {
+                margin-bottom: 1rem;
+            }
+        }
+
+        @media print {
+            .curriculo-header {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+            .curriculo-section {
+                break-inside: avoid;
+                page-break-inside: avoid;
+            }
+
+
+        }
 </style>
 
 <body>
