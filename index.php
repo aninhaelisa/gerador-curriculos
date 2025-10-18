@@ -39,6 +39,20 @@
                                 </select>
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="tamanho_fonte" class="form-label">Tamanho da Fonte Base</label>
+                                <select name="tamanho_fonte" id="tamanho_fonte" class="form-control">
+                                    <option value="14px">Pequeno (14px)</option>
+                                    <option value="16px" selected>Médio (16px)</option>
+                                    <option value="18px">Grande (18px)</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="estilo_layout" class="form-label">Estilo do Layout</label>
+                                <select name="estilo_layout" id="estilo_layout" class</select>
+                            </div>
+                        </div>
                     </div>
             </div>
         </form>
