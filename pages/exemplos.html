@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplos - Gerador de Currículos</title>
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="shortcut icon" href="../assets/cv.png" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            background: #202020;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            padding-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .examples-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .example-card {
+            background: #2a2a2a;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 2px solid #333;
+        }
+
+        .example-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff86eb;
+        }
+
+        .example-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #444;
+        }
+
+        .example-card h3 {
+            color: #ff86eb;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .example-card p {
+            color: #ccc;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+
+        .features {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .features li {
+            color: #fff;
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .features li:before {
+            content: "✓";
+            color: #ff86eb;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff86eb;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #882d7a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #ff86eb;
+            color: #ff86eb;
+        }
+
+        .btn-outline:hover {
+            background: #ff86eb;
+            color: white;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: #2a2a2a;
+            border-radius: 15px;
+            padding: 40px;
+            margin-top: 40px;
+            border-left: 5px solid #ff86eb;
+        }
+
+        .cta-section h2 {
+            color: #ff86eb;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
+        }
+
+        .cta-section p {
+            color: #ccc;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            opacity: 0.8;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .examples-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .example-image {
+                height: 300px;
+            }
+        }
+
+        .area-badge {
+            display: inline-block;
+            background: #ff86eb;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="rh-header">
+        <div class="rh-logo">Gerador de Currículo</div>
+
+        <nav class="rh-nav" id="rh-nav">
+            <ul class="rh-nav-list">
+                <li><a href="../index.php">Início</a></li>
+                <li><a href="ajuda.html">Ajuda</a></li> 
+               <li><a href="exemplos.html">Exemplos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+
+        <button class="rh-hamburger" id="rh-hamburger" aria-label="Abrir menu">
+            <span class="rh-bar"></span>
+            <span class="rh-bar"></span>
+            <span class="rh-bar"></span>
+        </button>
+    </header>
+
+    <div class="container">
+        <div class="header">
+            <h1>Modelos de Exemplo</h1>
+            <p>Inspire-se com estes currículos profissionais</p>
+        </div>
+
+        <div class="examples-grid">
+ 
+            <div class="example-card">
+                <span class="area-badge">Tecnologia</span>
+                <img src="../assets/exemplo1.jpg" alt="Currículo para área de Tecnologia" class="example-image">
+                <h3>Desenvolvedor</h3>
+                <p>Modelo ideal para profissionais de TI, programadores e desenvolvedores. Layout moderno com foco em habilidades técnicas.</p>
+                <ul class="features">
+                    <li>Seção para linguagens de programação</li>
+                    <li>Destaque para projetos e repositórios</li>
+                    <li>Design clean e profissional</li>
+                    <li>Foco em habilidades técnicas</li>
+                </ul>
+                <a href="../index.php" class="btn">Usar Este Modelo</a>
+            </div>
+
+            <div class="example-card">
+                <span class="area-badge">Marketing</span>
+                <img src="../assets/exemplo2.jpg" alt="Currículo para área de Marketing" class="example-image">
+                <h3>Especialista em Marketing Digital</h3>
+                <p>Perfeito para profissionais de marketing, mídias sociais e estratégias digitais. Design criativo e impactante.</p>
+                <ul class="features">
+                    <li>Destaque para campanhas e métricas</li>
+                    <li>Seção para certificações digitais</li>
+                    <li>Layout criativo e moderno</li>
+                    <li>Foco em resultados e KPIs</li>
+                </ul>
+                <a href="../index.php" class="btn">Usar Este Modelo</a>
+            </div>
+
+       
+            <div class="example-card">
+                <span class="area-badge">Administração</span>
+                <img src="../assets/exemplo3.jpg" alt="Currículo para área Administrativa" class="example-image">
+                <h3>Coordenador Administrativo</h3>
+                <p>Modelo clássico e profissional para cargos administrativos, gestão e coordenação. Elegante e formal.</p>
+                <ul class="features">
+                    <li>Layout tradicional e profissional</li>
+                    <li>Destaque para experiência gerencial</li>
+                    <li>Seção para conquistas e metas</li>
+                    <li>Design elegante e formal</li>
+                </ul>
+                <a href="../index.php" class="btn">Usar Este Modelo</a>
+            </div>
+        </div>
+
+        <div class="cta-section">
+            <h2>Pronto para Criar Seu Currículo?</h2>
+            <p>Personalize completamente o design, cores e layout do seu currículo em poucos minutos.</p>
+            <a href="../index.php" class="btn">Começar Agora</a>
+            <a href="ajuda.html" class="btn btn-outline" style="margin-left: 10px;">Ver Tutorial</a>
+        </div>
+
+        <div class="footer">
+            <p>Gerador de Currículos &copy; 2024 - Crie seu currículo profissional em minutos</p>
+        </div>
+    </div>
+
+    <script src="../js/menu.js"></script>
+</body>
+
+</html>
