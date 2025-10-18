@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - Gerador de Currículos</title>
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            background: #202020;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+            padding-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background: #2a2a2a;
+            border-radius: 15px;
+            padding: 30px;
+            border-left: 15px solid #ff86eb;
+        }
+
+        .card h2 {
+            color: #ff86eb;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .card h3 {
+            color: #ff86eb;
+            margin: 25px 0 15px 0;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: #ccc;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .mission-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .mission-list li {
+            color: #fff;
+            margin-bottom: 12px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .mission-list li:before {
+            content: ">";
+            color: #ff86eb;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .contact-info {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .contact-info li {
+            color: #fff;
+            margin-bottom: 15px;
+            padding-left: 0;
+        }
+
+        .contact-info strong {
+            color: #ff86eb;
+        }
+
+        .whatsapp-btn {
+            display: inline-flex;
+            align-items: center;
+            background: #25D366;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .whatsapp-btn i {
+            margin-right: 8px;
+            font-weight: bold;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff86eb;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #882d7a;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-block {
+            display: block;
+            width: 100%;
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 50px;
+            opacity: 0.8;
+            padding: 20px;
+        }
+
+        .highlight {
+            color: #ff86eb;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+
+        .student-info {
+            background: #333;
+            padding: 15px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        .student-info p {
+            margin-bottom: 5px;
+            color: #ccc;
+        }
+
+        .contact-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .contact-method {
+            background: #333;
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        .contact-method h4 {
+            color: #ff86eb;
+            margin-bottom: 8px;
+        }
+
+        .contact-method p {
+            margin-bottom: 10px;
+            color: #ccc;
+        }
+
+        .phone-link {
+            color: #ff86eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .phone-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="rh-header">
+        <div class="rh-logo">Gerador de Currículo</div>
+
+        <nav class="rh-nav" id="rh-nav">
+            <ul class="rh-nav-list">
+                <li><a href="../index.php">Início</a></li>
+                <li><a href="exemplos.html">Exemplos</a></li>
+                <li><a href="ajuda.html">Ajuda</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+
+        <button class="rh-hamburger" id="rh-hamburger" aria-label="Abrir menu">
+            <span class="rh-bar"></span>
+            <span class="rh-bar"></span>
+            <span class="rh-bar"></span>
+        </button>
+    </header>
+
+    <div class="container">
+        <div class="header">
+            <h1>Contato & Sobre o Projeto</h1>
+            <p>Conheça a história por trás deste gerador de currículos</p>
+        </div>
+
+        <div class="content-grid">
+            <!-- Coluna 1: Sobre o Projeto -->
+            <div class="card">
+                <h2>Por Que Este Projeto Foi Criado</h2>
+                <p>Este <span class="highlight">Gerador de Currículos</span> foi desenvolvido como parte da atividade prática da disciplina de <span class="highlight">Fundamentos de Programação para Internet</span> da UNIPAR EAD.</p>
+                
+                <p>O objetivo principal foi proporcionar uma <span class="highlight">vivência real no desenvolvimento web</span>, aproximando os alunos do mercado de trabalho através da criação de uma aplicação completa e funcional.</p>
+
+                <h3>Objetivos de Aprendizado</h3>
+                <ul class="mission-list">
+                    <li>Praticar as técnicas de programação aprendidas durante a matéria</li>
+                    <li>Desenvolver capacidade analítica através da interpretação de requisitos</li>
+                    <li>Aprender a pesquisar e implementar soluções como um desenvolvedor real</li>
+                    <li>Integrar diferentes tecnologias (PHP, HTML, CSS, JavaScript, jQuery)</li>
+                    <li>Compreender versionamento com Git e GitHub</li>
+                    <li>Criar interfaces funcionais sem necessidade de ser designer</li>
+                </ul>
+
+                <div class="student-info">
+                    <p><strong>Desenvolvedor:</strong> Ana Elisa N Correa</p>
+                    <p><strong>Curso:</strong> Engenharia de Software - UNIPAR EAD</p>
+                    <p><strong>Polo:</strong> Cianorte</p>
+                    <p><strong>Disciplina:</strong> Fundamentos de Programação para Internet</p>
+                </div>
+            </div>
+
+            <!-- Coluna 2: Contato -->
+            <div class="card">
+                <h2>Entre em Contato</h2>
+                <p>Tem dúvidas, sugestões ou quer compartilhar sua experiência com o gerador de currículos?</p>
+                
+                <ul class="contact-info">
+                    <li><strong>Telefone/WhatsApp:</strong> 44 9 9720-0148</li>
+                    <li><strong>Instituição:</strong> UNIPAR - Universidade Paranaense</li>
+                    <li><strong>Disciplina:</strong> Fundamentos de Programação para Internet</li>
+                </ul>
+
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <h4>WhatsApp</h4>
+                        <p>Envie uma mensagem direta para meu WhatsApp</p>
+                        <a href="https://wa.me/5544997200148?text=Olá!%20Gostaria%20de%20mais%20informações%20sobre%20o%20gerador%20de%20currículos" 
+                           class="whatsapp-btn" target="_blank">
+                            Enviar Mensagem no WhatsApp
+                        </a>
+                    </div>
+
+                    <div class="contact-method">
+                        <h4>Ligação Telefônica</h4>
+                        <p>Entre em contato por telefone</p>
+                        <a href="tel:+5544997200148" class="phone-link">(44) 9 9720-0148</a>
+                    </div>
+
+                </div>
+
+                <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #888;">
+                    Desenvolvido para a UNIPAR EAD por Ana Elisa
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Gerador de Currículos &copy; 2025 - Projeto Acadêmico - UNIPAR EAD</p>
+        </div>
+    </div>
+
+    <script src="../js/menu.js"></script>
+</body>
+
+</html>
