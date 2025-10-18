@@ -136,6 +136,172 @@
         </div>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+         document.addEventListener('DOMContentLoaded', function() {
+            const link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css';
+            document.head.appendChild(link);
+            
+            detectarMobile();
+        });
+        function imprimirCurriculo() {
+         
+         setTimeout(function() {
+         
+             const iframe = document.createElement('iframe');
+             iframe.style.display = 'none';
+             document.body.appendChild(iframe);
+             
+             const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+             
+             const curriculoContent = document.querySelector('.curriculo-container').cloneNode(true);
+      
+             iframeDoc.open();
+             iframeDoc.write(`
+                 <!DOCTYPE html>
+                 <html>
+                 <head>
+                     <title>Currículo - <?php echo htmlspecialchars($dados['nome']); ?></title>
+                     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+                     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Open+Sans:wght@300;400;600;700&family=Lato:wght@300;400;700&family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+                     <style>
+                         body { 
+                             margin: 0 !important; 
+                             padding: 15mm !important;
+                             background: white !important;
+                             font-size: 12pt;
+                             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                         }
+                         
+                         :root {
+                             --cor-primaria: <?php echo htmlspecialchars($dados['cor_primaria']); ?>;
+                             --fonte-titulos: '<?php echo htmlspecialchars($dados['fonte_titulos']); ?>', sans-serif;
+                         }
+                         
+                         .curriculo-container {
+                             box-shadow: none !important;
+                             margin: 0 !important;
+                             padding: 0 !important;
+                             min-height: auto !important;
+                             max-width: 100% !important;
+                             background: white !important;
+                         }
+                         
+                         .curriculo-header h1,
+                         .section-title {
+                             font-family: var(--fonte-titulos);
+                             color: var(--cor-primaria);
+                         }
+
+                         .curriculo-header {
+                             border-bottom: 3px solid var(--cor-primaria);
+                             padding-bottom: 1rem;
+                             margin-bottom: 1.5rem;
+                         }
+
+                         .section-title {
+                             border-bottom: 2px solid var(--cor-primaria);
+                             font-weight: 600;
+                             padding-bottom: 0.5rem;
+                             margin-bottom: 1rem;
+                         }
+                         
+                         <?php if ($dados['estilo_layout'] == 'classico') { ?>
+                         .curriculo-container {
+                             border: 1px solid #dee2e6;
+                         }
+                         .section-title {
+                             background-color: #f8f9fa;
+                             padding: 0.5rem 1rem;
+                             border-radius: 0.375rem 0.375rem 0 0;
+                         }
+                         <?php } ?>
+                         
+                         <?php if ($dados['estilo_layout'] == 'criativo') { ?>
+                         .curriculo-header {
+                             background: var(--cor-primaria) !important;
+                             color: white;
+                             padding: 2rem;
+                             border-radius: 0.5rem 0.5rem 0 0;
+                             margin-bottom: 2rem;
+                         }
+                         .curriculo-header h1,
+                         .curriculo-header p {
+                             color: white;
+                         }
+                         .section-title {
+                             background-color: var(--cor-primaria);
+                             color: white;
+                             padding: 0.5rem 1rem;
+                             border-radius: 0.375rem;
+                             border: none;
+                         }
+                         <?php } ?>
+                         
+                         .foto-perfil {
+                             width: 120px;
+                             height: 120px;
+                             object-fit: cover;
+                             border: 3px solid var(--cor-primaria);
+                         }
+                         
+                         .text-primary {
+                             color: var(--cor-primaria) !important;
+                         }
+                         
+                         .bg-primary {
+                             background-color: var(--cor-primaria) !important;
+                             color: white !important;
+                         }
+                         
+                         .no-print { 
+                             display: none !important; 
+                         }
+                         
+                         /* Garantir que cores sejam impressas */
+                         * {
+                             -webkit-print-color-adjust: exact !important;
+                             color-adjust: exact !important;
+                             print-color-adjust: exact !important;
+                         }
+                     </style>
+                 </head>
+                 <body>
+             `);
+             iframeDoc.body.appendChild(curriculoContent);
+             iframeDoc.write('</body></html>');
+             iframeDoc.close();
+
+             iframe.onload = function() {
+     
+                 iframe.contentWindow.focus();
+                 iframe.contentWindow.print();
+      
+                 setTimeout(function() {
+                     document.body.removeChild(iframe);
+                 }, 1000);
+             };
+             
+         }, 500);
+     }
+
+     function salvarComoPDF() {
+            if (confirm('Para salvar como PDF, use a opção "Salvar como PDF" na janela de impressão do seu navegador.')) {
+                imprimirCurriculo();
+            }
+        }
+
+    
+        function detectarMobile() {
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+       
+                document.getElementById('aviso-mobile').style.display = 'block';
+            }
+        }
+    </script>
         
 </body>
 
