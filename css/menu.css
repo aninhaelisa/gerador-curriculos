@@ -60,7 +60,7 @@
 
     .rh-nav {
         position: absolute;
-        top: 100%;
+        top: 65%;
         left: 0;
         background: #111;
         width: 100%;
@@ -83,7 +83,7 @@
     }
 
     .rh-hamburger.active .rh-bar:nth-child(1) {
-        transform: rotate(45deg) translateY(11px) translateX(3px);
+        transform: rotate(45deg) translateY(11px);
     }
 
     .rh-hamburger.active .rh-bar:nth-child(2) {
