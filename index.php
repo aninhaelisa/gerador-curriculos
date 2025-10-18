@@ -17,7 +17,7 @@
 <header class="rh-header">
       <div class="rh-logo">Gerador de Currículo</div>
   
-      <nav class="rh-nav" id="rh-nav">
+      <nav class="rh-nav" id="rh-nav" style="margin-top: 20px;">
         <ul class="rh-nav-list">
           <li><a href="index.php">Início</a></li>
           <li><a href="pages/ajuda.html">Ajuda</a></li>
