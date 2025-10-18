@@ -8,6 +8,30 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Conteúdo do currículo será adicionado aqui nas próximas etapas -->
+<div class="curriculo-container">
+    <div class="curriculo-header">
+        <div class="row align-items-center">
+            <?php if (!empty($dados['foto']) && file_exists($dados['foto'])) { ?>
+            <div class="col-md-3 text-center mb-3 mb-md-0">
+                <img src="<?php echo htmlspecialchars($dados['foto']); ?>" alt="Foto de <?php echo htmlspecialchars($dados['nome']); ?>" class="foto-perfil rounded-circle">
+            </div>
+            <div class="col-md-9">
+            <?php } else { ?>
+            <div class="col-12">
+            <?php } ?>
+                <h1 class="mb-2"><?php echo htmlspecialchars($dados['nome']); ?></h1>
+                <div class="row">
+                    <div class="col-md-6">
+                        <p class="mb-1"><strong>Localização:</strong> <?php echo htmlspecialchars($dados['cidade']); ?><?php if (!empty($dados['estado'])) { ?>, <?php echo htmlspecialchars($dados['estado']); ?><?php } ?></p>
+                        <p class="mb-1"><strong>Idade:</strong> <?php echo htmlspecialchars($dados['idade']); ?></p>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="mb-1"><strong>Telefone:</strong> <?php echo htmlspecialchars($dados['telefone']); ?></p>
+                        <p class="mb-0"><strong>E-mail:</strong> <?php echo htmlspecialchars($dados['email']); ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
