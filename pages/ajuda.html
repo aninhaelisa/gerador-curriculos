@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajuda - Gerador de Currículos</title>
+    <link rel="stylesheet" href="../css/menu.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            background: #202020;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            color: white;
+          
+            padding-top: 20px;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .card {
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+
+        }
+
+        .card p{
+            color: white;
+        }
+
+        .card h2 {
+            color: #ff86eb;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .steps {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .steps li {
+            counter-increment: step-counter;
+            margin-bottom: 15px;
+            padding-left: 50px;
+            position: relative;
+            color: #fff;
+        }
+
+        .steps li:before {
+            content: counter(step-counter);
+            background: #ff86eb;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: bold;
+        }
+
+        .tips {
+            display: grid;
+            gap: 15px;
+        }
+
+        .tip-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 15px;
+            border-left: 15px solid #ff86eb;
+        }
+
+        .tip-item strong {
+            color: #ff86eb;
+            font-weight: 700;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #ff86eb;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #882d7a;
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 30px;
+            opacity: 0.8;
+        }
+
+        @media (max-width: 600px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 20px;
+            }
+
+            .steps li {
+                padding-left: 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="rh-header">
+        <div class="rh-logo">Gerador de Currículo</div>
+
+        <nav class="rh-nav" id="rh-nav">
+            <ul class="rh-nav-list">
+                <li><a href="../index.php">Início</a></li>
+                <li><a href="ajuda.html">Ajuda</a></li>
+                <li><a href="exemplos.html">Exemplos</a></li>
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+        </nav>
+
+        <button class="rh-hamburger" id="rh-hamburger" aria-label="Abrir menu">
+            <span class="rh-bar"></span>
+            <span class="rh-bar"></span>
+            <span class="rh-bar"></span>
+        </button>
+    </header>
+    <div class="container">
+        <div class="header">
+            <h1>Como Usar</h1>
+            <p>Guia rápido para criar seu currículo profissional</p>
+        </div>
+
+        <div class="card">
+            <h2>Passo a Passo</h2>
+            <ol class="steps">
+                <li><strong>Preencha os dados pessoais</strong> - Nome, e-mail, telefone e informações básicas</li>
+                <li><strong>Adicione sua foto</strong> - Opcional, mas recomenda-se imagem profissional</li>
+                <li><strong>Inclua experiências profissionais</strong> - Use o botão "+" para adicionar mais empregos
+                </li>
+                <li><strong>Adicione formação acadêmica</strong> - Cursos, faculdades e especializações</li>
+                <li><strong>Liste suas habilidades</strong> - Habilidades técnicas e comportamentais</li>
+                <li><strong>Personalize o design</strong> - Escolha cores e fontes do seu currículo</li>
+                <li><strong>Gere e baixe</strong> - Visualize e salve como PDF</li>
+            </ol>
+        </div>
+
+        <div class="card">
+            <h2>Dicas Importantes</h2>
+            <div class="tips">
+                <div class="tip-item">
+                    <strong>Foto Profissional</strong><br>
+                    Use imagem de boa qualidade com fundo neutro
+                </div>
+                <div class="tip-item">
+                    <strong>Ordenação Correta</strong><br>
+                    Liste experiências da mais recente para a mais antiga
+                </div>
+                <div class="tip-item">
+                    <strong>Design Consistente</strong><br>
+                    Escolha cores que reflitam sua área profissional
+                </div>
+                <div class="tip-item">
+                    <strong>Objetividade</strong><br>
+                    Seja claro e direto nas descrições
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="text-align: center;">
+            <h2>Pronto para Começar?</h2>
+            <p>Crie seu currículo profissional em poucos minutos!</p>
+            <a href="../index.php" class="btn">Criar Meu Currículo</a>
+        </div>
+
+        <div class="footer">
+            <p>Gerador de Currículos &copy; 2025 - Projeto Acadêmico - UNIPAR EAD</p>
+        </div>
+    </div>
+    </div>
+    <script src="../js/menu.js"></script>
+</body>
+
+</html>
