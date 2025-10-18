@@ -13,6 +13,25 @@
 
 <body>
 
+<header class="rh-header">
+      <div class="rh-logo">Gerador de Currículo</div>
+  
+      <nav class="rh-nav" id="rh-nav">
+        <ul class="rh-nav-list">
+          <li><a href="index.php">Início</a></li>
+          <li><a href="pages/ajuda.html">Ajuda</a></li>
+          <li><a href="pages/exemplos.html">Exemplos</a></li>
+          <li><a href="pages/contato.html">Contato</a></li>
+        </ul>
+      </nav>
+  
+      <button class="rh-hamburger" id="rh-hamburger" aria-label="Abrir menu">
+        <span class="rh-bar"></span>
+        <span class="rh-bar"></span>
+        <span class="rh-bar"></span>
+      </button>
+    </header>
+
     <div class="container mt-4">
 
         <h1 class="text-center mb-4" style="color:#fff;"> Crie Seu Currículo Profissional</h1>
