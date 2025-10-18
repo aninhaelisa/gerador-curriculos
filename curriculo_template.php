@@ -120,7 +120,21 @@
                 </div>
             <?php } ?>
 </div>
+<div class="text-center mt-4 no-print">
+        <button class="btn btn-primary me-2" onclick="imprimirCurriculo()">
+            <i class="bi bi-printer"></i> Imprimir/Download
+        </button>
+        <button class="btn btn-success me-2" onclick="salvarComoPDF()">
+            <i class="bi bi-file-earmark-pdf"></i> Salvar como PDF
+        </button>
+        <a href="index.php" class="btn btn-secondary">
+            <i class="bi bi-plus-circle"></i> Criar Novo Currículo
+        </a>
 
+        <div id="aviso-mobile" class="alert alert-info mt-3" style="display: none;">
+            <strong>Dica:</strong> No celular, toque em "Compartilhar" e depois "Imprimir" para salvar como PDF.
+        </div>
+    </div>
 
         
 </body>
